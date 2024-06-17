@@ -1,5 +1,5 @@
 .member_image{
-    background-image: url('public/Project_images/Backgrounds/top-view-jar-with-roasted-coffee-beans-copy-space.jpg');
+    background-image: url('./Project_images/Backgrounds/top-view-jar-with-roasted-coffee-beans-copy-space.jpg');
     background-size: cover;
     background-position: center;
 }
