@@ -47,8 +47,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "https://barista-coffee.vercel.app//success",
-      cancel_url: "https://barista-coffee.vercel.app//cancel",
+      success_url: "https://barista-coffee.vercel.app/success",
+      cancel_url: "https://barista-coffee.vercel.app/cancel",
     });
 
     res.json({ id: session.id });
