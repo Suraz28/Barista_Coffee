@@ -1,0 +1,141 @@
+.navbar{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 10px 10px;
+    z-index: 100;
+    margin-top: 40px;
+}
+
+.logoimage img{
+    height: 40px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.navcart{
+    display: flex;
+    width: 100%;
+}
+
+.navtext{
+    /* background-color: aqua; */
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    span:hover{
+        cursor: pointer;
+    }
+}
+
+.icons{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+    margin-right: 25px;
+    position: relative;
+    .carticon{
+        padding: 5px;
+        border-radius: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .itemcount{
+        transition: 0.1s ease-in-out;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+    }
+    span{
+        position: absolute;
+        top: 0;
+        left: 30px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 860px){
+    .navtext{
+        padding: 10px 15px;
+        span{
+            font-size: 14px;
+        }
+    }
+    .button{
+        font-size: 12px;
+    }
+    .logoimage img{
+        height: 35px;
+    }
+}
+@media screen and (max-width: 768px){
+    .navbar{
+        display: block;
+        margin-top: 0;
+        padding: 5px 0;
+    }
+    .navcart{
+        top: 0;
+        margin-top: 50px;
+        backdrop-filter: blur(10px);
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+        padding: 10px 0;
+    }
+    .logoimage{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px;
+    }
+    .navtext{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        span{
+            font-size: 15px;
+        }
+    }
+    .icons{
+        /* background-color: rgb(214, 228, 19); */
+        align-items: flex-end;
+        justify-content: center;
+        height: 40px;
+        margin-right: 50px;
+    }
+    .barscross{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+}
+@media screen and (min-width: 769px){
+    .barscross{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+.navtext{
+    span{
+        font-size: 13px;
+    }
+}   
+}

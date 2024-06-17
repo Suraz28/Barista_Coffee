@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Rubik+Mono+One&display=swap');
+
+*{
+  font-family: Roboto serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #E4CFBB;
+}
+.home_h1{
+  font-family: 'Rubik Mono One';
+}
+
+.button{
+  font-size: 14px;
+}
+
+.active{
+  position: relative;
+  z-index: 1;
+  color: #f6a453;
+}
+.active::before{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* height: 2px; */
+  width: 100%;
+  border: 2px solid #f6a453;
+  border-radius: 10px;
+  z-index: -1;
+}
+.shop_link{
+  position: relative;
+  z-index: 1;
+}
+.shop_link::before{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  z-index: -1;
+}
