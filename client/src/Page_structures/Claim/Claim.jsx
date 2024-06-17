@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Claim = () => {
   return (
-    <div className="h-auto w-screen flex flex-row items-center justify-center text-black" id="home">
+    <div className="h-auto flex flex-row items-center justify-center text-black" id="home">
         <div className='md:h-[100%] md:w-[90%] rounded-md bg-background flex flex-col'>
     <div className=' text-sm flex flex-col gap-4'>I do not own any of the images used. Image credit goes to the respective owners
     <div className='h-auto w-auto flex flex-col mt-3'>
