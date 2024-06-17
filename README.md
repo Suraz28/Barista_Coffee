@@ -1,13 +1,11 @@
 #Screenshots:
 
-![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/27cb683a-901d-4b6b-8d9c-36f54bbc1723)
+![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/35b543f9-df9e-4a98-ac2d-5e87adc968c9)
 
-![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/3df11180-feea-4df2-9c58-188875acbca1)
+![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/0adfb6a7-2df4-457f-b9f6-fd2cf3d1d2e7)
 
-![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/ddd84841-e208-4136-ad9d-943860aed01e)
+![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/a7766277-4734-4232-a2b3-59487ef49568)
 
-![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/b12df9b2-ae0e-451f-a1a6-109c0195c941)
+![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/6806c8e7-d3e8-4bae-950f-cbfe8fb3fb35)
 
-![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/addfef11-eb1d-4598-97cd-61430fd31586)
-
-
+![image](https://github.com/Suraz28/Barista_Coffee/assets/82082451/e6ce336a-a32f-4902-89db-8e2a463015b5)
