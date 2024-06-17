@@ -36,6 +36,15 @@ const Claim = () => {
         </li>
         </ul>
     </div>
+    <div className='h-auto w-auto flex flex-col mt-5'>
+        <span>Others:</span>
+        <ul>
+        <li>
+            <span>background</span><br/>
+        <a href='https://unsplash.com/photos/coffee-beans-beside-coffee-powder-on-brown-wooden-board-KixfBEdyp64' target='_blank' className='text-blue-700 underline'>https://unsplash.com/photos/coffee-beans-beside-coffee-powder-on-brown-wooden-board-KixfBEdyp64</a><br/>
+        </li>
+        </ul>
+    </div>
     <span className=''>
     <Link to='/' className='underline text-black'>Go back</Link> 
     </span>
