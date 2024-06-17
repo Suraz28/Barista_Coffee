@@ -41,7 +41,7 @@ const Member = () => {
 
   return (
     <div className="_member h-[70vh] flex flex-row items-center justify-center text-black" id="member">
-      <div className='member_image md:h-[100%] md:w-[90%] w-full h-full bg-white rounded-md flex flex-col md:flex-row'>
+      <div className='member_image bg-[url("./public/images/top-view-jar-with-roasted-coffee-beans-copy-space.jpg")] bg-cover bg-center md:h-[100%] md:w-[90%] w-full h-full bg-white rounded-md flex flex-col md:flex-row'>
         <div className='flex flex-col w-full md:pl-20 h-full items-center justify-center md:items-end md:justify-center md:pr-20 gap-5'>
           {member ? (
             <h1 className='font-bold text-xl sm:text-2xl md:text-3xl'>
