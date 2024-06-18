@@ -4,7 +4,11 @@ const cors = require("cors");
 const stripe = require("stripe")("sk_test_51PRq03J8ZpI6Xk5rzOAADjpbUYbmuGtb7kZxPuQfMAvDOl9izkNp1ZbjfuA3dkXQANOwWOq3GpZbRRLEqwUzlPur003MRfX43z");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://barista-coffee.vercel.app", // Frontend origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+}));
 
 // Root route
 app.get("/", (req, res) => {
