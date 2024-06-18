@@ -16,11 +16,11 @@ const AboutStory = () => {
     <div className="h-auto flex flex-row items-center justify-center text-white">
       <div className='md:h-[90%] md:w-[90%] w-full bg-black rounded-md flex flex-col gap-5'>
         <div className="h-auto bg-gray-900 text-white flex flex-col items-center justify-center p-4">
-          <img src="./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png" alt="Barista Coffee Logo" className="md:h-32 h-24 mb-8" />
+          <img src="./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png" alt="Barista Coffee Logo" className="md:h-32 h-20 mb-8" />
           
           <div className="w-full max-w-4xl space-y-8">
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold">The Story of Barista Coffee</h1>
+              <h1 className="md:text-4xl text-3xl font-bold">The Story of Barista Coffee</h1>
               <p className="text-sm mt-4 text-justify">
                 Barista Coffee, a cozy and aromatic haven, began its journey in the heart of Kathmandu, Nepal. The dream was simple yet profound: to create a space where coffee lovers could gather and enjoy the finest brews while soaking in the rich culture of Nepal. The founders, a group of passionate coffee enthusiasts, wanted to bring the world-class coffee experience to their homeland, emphasizing quality, sustainability, and community.
               </p>

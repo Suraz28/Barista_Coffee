@@ -58,7 +58,7 @@ const Cart = () => {
   }, []);
 
   const makePayment = async () => {
-    const stripe = await loadStripe("pk_test_51PRq03J8ZpI6Xk5rHXamntYxNX5UFmYH38d6dALOprK6zhLhV0nLAoR1cyQmsHD9TzhwB4eUZlwRyAUnl5pjYStm00H3HDeOZD");
+    const stripe = await loadStripe(process.env.REACT_APP_PK_CODE);
 
     const body = {
       products: cartProducts,

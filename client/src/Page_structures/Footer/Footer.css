@@ -53,8 +53,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 2.5rem; /* p-10 */
-    padding-left: 5rem; /* pl-20 */
+    padding: 2.5rem;
   }
   
   ._footer ._footer_1, ._footer_2, ._footer_3, ._footer_4 {

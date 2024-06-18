@@ -2,6 +2,7 @@
     background-image: url('/Project_images/Backgrounds/top-view-jar-with-roasted-coffee-beans-copy-space.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width:500px) {

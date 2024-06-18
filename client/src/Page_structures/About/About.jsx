@@ -8,7 +8,7 @@ const About = () => {
         <div className='md:h-[90%] md:min-h-screen md:w-[90%] w-full bg-black rounded-md flex flex-col gap-5 p-8 md:py-10'>
             <div className='_about_heading flex items-center justify-evenly gap-10 py-10 w-full h-1/4'>
             <img src='./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png' className='h-20'/>
-            <h1 className='md:text-3xl md:pl-5 sm:text-2xl text-xl font-bold'>Know the Story of Barista</h1>
+            <h1 className='md:text-3xl md:pl-5 sm:text-2xl text-xl font-bold text-center'>Know the Story of Barista</h1>
             </div>
             <div className='_about w-full items-center justify-start h-3/4'>
             <div className='_about_image h-full md:w-1/2 w-full flex items-start justify-center'>
