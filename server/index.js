@@ -6,6 +6,7 @@ const stripe = require("stripe")("sk_test_51PRq03J8ZpI6Xk5rzOAADjpbUYbmuGtb7kZxP
 app.use(express.json());
 app.use(cors());
 
+
 // Root route
 app.get("/", (req, res) => {
   res.send("Welcome to the Barista Coffee API");
