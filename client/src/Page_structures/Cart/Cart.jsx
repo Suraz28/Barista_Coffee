@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { decreaseQuantity, increaseQuantity, removeFromCart } from "../Slices/CartSlice";
 import { loadStripe } from '@stripe/stripe-js';
-import dotenv from 'dotenv';
 
 const Cart = () => {
-  dotenv.config();
   const [discount, setDiscount] = useState(0);
   const [coupon, setCoupon] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -60,7 +58,7 @@ const Cart = () => {
   }, []);
 
   const makePayment = async () => {
-    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+    const stripe = await loadStripe("pk_test_51PRq03J8ZpI6Xk5rHXamntYxNX5UFmYH38d6dALOprK6zhLhV0nLAoR1cyQmsHD9TzhwB4eUZlwRyAUnl5pjYStm00H3HDeOZD");
 
     const body = {
       products: cartProducts,
