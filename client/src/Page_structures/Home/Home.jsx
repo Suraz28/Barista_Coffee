@@ -8,7 +8,7 @@ const Home = () => {
   }
 
   return (
-    <div className="h-screen flex flex-row items-center justify-center text-white" id="home">
+    <div className="min-h-screen h-auto flex flex-row items-center justify-center text-white" id="home">
         <div className='home_image md:h-[100%] md:w-[90%] rounded-md flex flex-col'>
             <Navbar style/>
             <div className='home_content h-full w-full flex flex-col'>

@@ -5,7 +5,10 @@ const Claim = () => {
   return (
     <div className="h-auto flex flex-row items-center justify-center text-black" id="home">
         <div className='md:h-[100%] md:w-[90%] rounded-md bg-background flex flex-col'>
-    <div className='w-full h-full p-2 text-sm flex flex-col gap-4'>I do not own any of the images used. Image credit goes to the respective owners
+    <div className='text-sm flex flex-col gap-4'>
+        <span>
+            I do not own any of the images used. Image credit goes to the respective owners
+            </span>
     <div className='h-auto w-auto flex flex-col mt-3'>
         <span>coffee images:</span>
         <ul>
