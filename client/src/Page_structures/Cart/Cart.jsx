@@ -154,9 +154,9 @@ const Cart = () => {
           <div>
             <div className='flex flex-col md:flex-row items-center justify-between w-full my-4 gap-2 px-4 text-sm'>
               <input className='w-full p-3 border-none focus:outline-none bg-lightish' placeholder='Coupon Code = barista_coffee' value={coupon} onChange={(e) => setCoupon(e.target.value)} />
-              <button className='button cursor-pointer w-full md:w-80 px-1 py-3 bg-lightish md:hover:bg-dark-brown md:hover:text-white md:hover:shadow-md' onClick={couponCode}>Apply Discount</button>
+              <button className='button cursor-pointer w-full md:w-80 px-1 py-3 bg-lightish hover:bg-dark-brown hover:text-white md:hover:shadow-md' onClick={couponCode}>Apply Discount</button>
               <span className='flex flex-row items-center justify-around gap-5 w-full md:w-1/2'>
-                <button className='button cursor-pointer w-full md:w-80 px-1 py-3 bg-lightish md:hover:bg-dark-brown md:hover:text-white md:hover:shadow-md' onClick={makePayment}>Checkout</button>
+                <button className='button cursor-pointer w-full md:w-80 px-1 py-3 bg-lightish hover:bg-dark-brown hover:text-white md:hover:shadow-md' onClick={makePayment}>Checkout</button>
               </span>
             </div>
             <div className='bg-dark-brown text-white p-4 flex flex-col md:flex-row items-start md:items-center justify-around mx-4 text-sm'>
