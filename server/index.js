@@ -6,6 +6,11 @@ const stripe = require("stripe")("sk_test_51PRq03J8ZpI6Xk5rzOAADjpbUYbmuGtb7kZxP
 app.use(express.json());
 app.use(cors());
 
+// Root route
+app.get("/", (req, res) => {
+  res.send("Welcome to the Barista Coffee API");
+});
+
 app.post("/api/create-checkout-session", async (req, res) => {
   const { products, total } = req.body;
 
@@ -47,8 +52,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "https://barista-coffee.vercel.app/success",
-      cancel_url: "https://barista-coffee.vercel.app/cancel",
+      success_url: "http://localhost:5173/success",
+      cancel_url: "http://localhost:5173/cancel",
     });
 
     res.json({ id: session.id });
@@ -58,6 +63,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
   }
 });
 
-app.listen(7000, () => {
-  console.log("Server started on port 7000");
+const PORT = process.env.PORT || 7000;
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
