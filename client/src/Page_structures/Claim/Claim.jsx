@@ -1,17 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const Claim = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top of the page on component mount
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  
   return (
     <div className="h-auto flex items-center justify-center  text-white">
       <div className="w-full md:w-[90%] bg-gray-800 rounded-lg shadow-lg p-8 md:p-12">
-        <div className="text-base md:text-lg leading-relaxed">
+        <div className="text-base leading-relaxed">
           <p className="mb-4">
             I do not own any of the images used. Image credit goes to the respective owners.
           </p>
 
           <div className="mt-6">
-            <h2 className="text-xl font-semibold mb-2">Coffee images:</h2>
+            <h2 className="font-semibold mb-2">Coffee images:</h2>
             <ul className="space-y-3">
               <li>
                 <span className="font-medium">Cappuccino</span><br />
@@ -33,7 +42,7 @@ const Claim = () => {
           </div>
 
           <div className="mt-6">
-            <h2 className="text-xl font-semibold mb-2">Dessert images:</h2>
+            <h2 className="font-semibold mb-2">Dessert images:</h2>
             <ul className="space-y-3">
               <li>
                 <span className="font-medium">Brown Cookie</span><br />
@@ -55,7 +64,7 @@ const Claim = () => {
           </div>
 
           <div className="mt-6">
-            <h2 className="text-xl font-semibold mb-2">Others:</h2>
+            <h2 className="font-semibold mb-2">Others:</h2>
             <ul className="space-y-3">
               <li>
                 <span className="font-medium">Background</span><br />
