@@ -4,11 +4,7 @@ const cors = require("cors");
 const stripe = require("stripe")("sk_test_51PRq03J8ZpI6Xk5rzOAADjpbUYbmuGtb7kZxPuQfMAvDOl9izkNp1ZbjfuA3dkXQANOwWOq3GpZbRRLEqwUzlPur003MRfX43z");
 
 app.use(express.json());
-app.use(cors({
-  origin: "https://barista-coffee.vercel.app", // Frontend origin
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-}));
+app.use(cors());
 
 // Root route
 app.get("/", (req, res) => {
@@ -56,8 +52,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.FRONTEND_URL}/success`,
-      cancel_url: `${process.env.FRONTEND_URL}/cancel`,
+      success_url: "http://localhost:5173/success",
+      cancel_url: "http://localhost:5173/cancel",
     });
 
     res.json({ id: session.id });
