@@ -94,7 +94,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="h-screen flex flex-row items-center justify-center text-black" id="home">
+    <div className="min-h-screen h-auto flex flex-row items-center justify-center text-black" id="home">
       <div className='md:h-[100%] md:w-[90%] h-full w-full bg-white rounded-md flex flex-col p-2'>
         <div className='cart_nav flex flex-row px-4 w-full items-center justify-between p-3'>
           <Link to='/'>

@@ -141,7 +141,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="h-auto flex flex-row items-center justify-center text-black" id='menu'>
+    <div className="min-h-screen h-auto flex flex-row items-center justify-center text-black" id='menu'>
       <div className='md:h-[90%] md:w-[90%] w-full bg-background rounded-md flex flex-col p-4'>
         <div className=' h-auto w-full flex flex-col items-center justify-center p-3'>
           <h1 className="active text-dark-brown text-xl font-bold mt-10">Our Menu</h1>
