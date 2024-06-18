@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <div className="min-h-screen h-auto flex flex-row items-center justify-center text-white" id='about'>
+    <div className="h-auto flex flex-row items-center justify-center text-white" id='about'>
         <div className='md:h-[90%] md:min-h-screen md:w-[90%] w-full bg-black rounded-md flex flex-col gap-5 p-8 md:py-10'>
             <div className='_about_heading flex items-center justify-evenly gap-10 py-10 w-full h-1/4'>
             <img src='./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png' className='h-20'/>
