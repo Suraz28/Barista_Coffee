@@ -16,7 +16,7 @@ const Claim = () => {
       <div className="w-full md:w-[90%] bg-gray-800 rounded-lg shadow-lg p-8 md:p-12">
         <div className="text-base leading-relaxed">
           <p className="mb-4">
-            I do not own any of the images used. Image credit goes to the respective owners.
+            Images credit goes to the respective owners.
           </p>
 
           <div className="mt-6">
@@ -69,6 +69,10 @@ const Claim = () => {
               <li>
                 <span className="font-medium">Background</span><br />
                 <a href='https://unsplash.com/photos/coffee-beans-beside-coffee-powder-on-brown-wooden-board-KixfBEdyp64' target='_blank' className='text-blue-400 hover:underline'>Background Image</a>
+              </li>
+              <li>
+                <span className="font-medium">Coffee beans</span><br />
+                <a href='https://i.pinimg.com/564x/eb/cb/67/ebcb67be0dd2c71eb8d974a0a74a2dc4.jpg' target='_blank' className='text-blue-400 hover:underline'>Coffee Beans Image</a>
               </li>
             </ul>
           </div>
