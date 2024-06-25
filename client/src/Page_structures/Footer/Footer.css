@@ -8,7 +8,6 @@
     .footer ._footer{
         display: flex;
         flex-direction: column;
-        /* text-align: start; */
     }
     .footer ._footer ._footer_1{
         width: 100%;
@@ -64,6 +63,7 @@
     align-items: flex-start;
     justify-content: center;
     gap: 1.25rem; /* gap-5 for _footer_1, gap-2 for others */
+    
   }
   
   .logo {
@@ -77,10 +77,6 @@
   .title {
     font-size: 0.8125rem; /* text-[13px] */
     font-weight: bold;
-  }
-  
-  ._footer_2 span, ._footer_3 span, ._footer_4 span {
-    cursor: pointer;
   }
   
   ._footer_4 {

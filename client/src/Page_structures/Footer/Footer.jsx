@@ -18,7 +18,7 @@ const Footer = () => {
                 <span className='phone'>Phone: 056-520***</span>
             </div>
             <div className='_footer_3'>
-                <span className='title'><Link>Quick Links</Link></span>
+                <span className='title' ><Link style={{cursor: 'auto'}} >Quick Links</Link></span>
                 <Scroll
                     to="home"
                     spy={true}
@@ -40,9 +40,9 @@ const Footer = () => {
             </div>
             <div className='_footer_4'>
                 <span className='title'>Social Links</span>
-                <FaFacebook className='social-icon'/>
-                <FaLinkedin className='social-icon'/>
-                <FaInstagramSquare className='social-icon'/>
+                <FaFacebook className='social-icon' style={{cursor: 'pointer'}}/>
+                <FaLinkedin className='social-icon' style={{cursor: 'pointer'}}/>
+                <FaInstagramSquare className='social-icon' style={{cursor: 'pointer'}}/>
             </div>
         </div>
     </div>

@@ -18,6 +18,7 @@ const Footer = React.lazy(() => import('./Page_structures/Footer/Footer'));
 const Copyright = React.lazy(() => import('./Page_structures/Copyright/Copyright'));
 const Cart = React.lazy(() => import('./Page_structures/Cart/Cart'));
 const AboutStory = React.lazy(() => import('./Page_structures/About/AboutStory'));
+const GiftCards = React.lazy(() => import('./Page_structures/GiftCards/GiftCards'));
 
 const App = ({
   spinnerColor = "#f6a453",
@@ -85,6 +86,11 @@ const App = ({
           <Route path='/barista_story' element={
             <Suspense fallback={<div style={fallbackStyle}><BounceLoader color={spinnerColor} size={spinnerSize} /></div>}>
               <AboutStory />
+            </Suspense>
+          } />
+          <Route path='/giftcards' element={
+            <Suspense fallback={<div style={fallbackStyle}><BounceLoader color={spinnerColor} size={spinnerSize} /></div>}>
+              <GiftCards/>
             </Suspense>
           } />
         </Routes>

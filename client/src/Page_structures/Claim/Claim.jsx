@@ -71,6 +71,10 @@ const Claim = () => {
                 <a href='https://unsplash.com/photos/coffee-beans-beside-coffee-powder-on-brown-wooden-board-KixfBEdyp64' target='_blank' className='text-blue-400 hover:underline'>Background Image</a>
               </li>
               <li>
+                <span className="font-medium">Background</span><br />
+                <a href='https://i.pinimg.com/originals/e6/db/d1/e6dbd1b8384e7c0240db405301dc31db.jpg' target='_blank' className='text-blue-400 hover:underline'>Background Image</a>
+              </li>
+              <li>
                 <span className="font-medium">Coffee beans</span><br />
                 <a href='https://i.pinimg.com/564x/eb/cb/67/ebcb67be0dd2c71eb8d974a0a74a2dc4.jpg' target='_blank' className='text-blue-400 hover:underline'>Coffee Beans Image</a>
               </li>

@@ -22,11 +22,6 @@ const Navbar = () => {
         setActiveLink(to);
     };
 
-    //giftcards popup
-    const handleGift = () => {
-        alert('Under Development');
-    };
-
     useEffect(() => {
         if(window.innerWidth<768){
             setIsNavOpen(false);
@@ -101,7 +96,9 @@ const Navbar = () => {
                             </span>
                         )}
                             </div>
-                            <button className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown' onClick={handleGift}>Gift Cards</button>
+                            <Link to='/giftcards'>
+                            <button className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown'>Gift Cards</button>
+                            </Link>
                         </div>
                     </div>
                 )}

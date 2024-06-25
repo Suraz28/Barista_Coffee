@@ -164,7 +164,6 @@ const Cart = () => {
               <span>Shipping Fee: No Shipping Fee</span>
               <span>Total: Rs {total - discount}</span>
             </div>
-            {/* <span className='text-xs px-4 flex items-center text-center'>Disable the adblock for the payment to work</span> */}
           </div>
         )}
       </div>
