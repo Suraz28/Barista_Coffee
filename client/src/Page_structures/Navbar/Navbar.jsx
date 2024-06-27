@@ -14,14 +14,17 @@ const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(true);
     const [activeLink, setActiveLink] = useState('');
 
+    // toggle the navigaion bar for responsiveness
     const toggleNavOpen = () => {
         setIsNavOpen(!isNavOpen);
     };
 
+    // sets the active nav link
     const handleSetActive = (to) => {
         setActiveLink(to);
     };
 
+    // tracks the width of the screen
     useEffect(() => {
         if(window.innerWidth<768){
             setIsNavOpen(false);

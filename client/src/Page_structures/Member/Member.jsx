@@ -7,11 +7,14 @@ const Member = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(null);
 
+  // get the member detail from the local storage
   useEffect(() => {
     const isMember = localStorage.getItem('member') === 'true';
     setMember(isMember);
   }, []);
 
+
+  // email validation
   const validateEmail = (email) => {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
@@ -35,6 +38,7 @@ const Member = () => {
     }
     setEmailError(null);
     setMember(true);
+    // store the member detail to the local storage
     localStorage.setItem('member', 'true');
     setEmail('');
   };

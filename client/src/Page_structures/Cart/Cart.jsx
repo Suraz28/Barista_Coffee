@@ -10,6 +10,7 @@ const Cart = () => {
   const [coupon, setCoupon] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
 
+  // import the cart products form store
   const cartProducts = useSelector(state => state.products.cartProducts);
   const dispatch = useDispatch();
 
@@ -25,14 +26,17 @@ const Cart = () => {
     dispatch(removeFromCart(index));
   };
 
+  // calculate the sub-total price
   const calculateSubtotal = (price, count) => {
     return parseFloat(price.replace('Rs ', '')) * count;
   };
 
+  // calculate the total price
   const total = cartProducts.reduce((acc, product) => {
     return acc + calculateSubtotal(product.price, product.count);
   }, 0);
 
+  // coupon code for discount
   const couponCode = () => {
     if (coupon === 'barista_coffee') {
       setDiscount(75);
@@ -41,6 +45,7 @@ const Cart = () => {
     }
   };
 
+  // check the responsiveness of screen
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -57,6 +62,8 @@ const Cart = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
+  // introduce the payment gateway
   const makePayment = async () => {
     const stripe = await loadStripe("pk_test_51PRq03J8ZpI6Xk5rHXamntYxNX5UFmYH38d6dALOprK6zhLhV0nLAoR1cyQmsHD9TzhwB4eUZlwRyAUnl5pjYStm00H3HDeOZD");
 

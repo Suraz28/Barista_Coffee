@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Slices/CartSlice";
 import { SyncLoader } from 'react-spinners';
 
-
+// menu items to show 
 const menu = [
   {
     id: 1,
@@ -39,6 +39,7 @@ const menu = [
   },
 ];
 
+// dessert items to show
 const dessert = [
   {
     id: 5,
@@ -70,6 +71,7 @@ const dessert = [
   },
 ];
 
+// settings applied for slider
 const coffee_settings = {
   infinite: true,
   speed: 500,
@@ -119,19 +121,24 @@ const dessert_settings = {
 };
 
 const Menu = () => {
+  // get the cartproducts from store
   const cartProducts = useSelector(state => state.products.cartProducts);
   const dispatch = useDispatch();
 
+  // add the item to the cart
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
 
+  // check if the item is in the cart
   const isInCart = (id) => {
     return cartProducts.some(product => product.id === id);
   };
 
+  // state to track if the image is loaded
   const [imageLoaded, setImageLoaded] = useState({});
 
+  // update the loaded image
   const handleImageLoad = (id) => {
     setImageLoaded((prev) => ({ ...prev, [id]: true }));
   };
