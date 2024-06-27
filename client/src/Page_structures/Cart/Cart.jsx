@@ -65,8 +65,13 @@ const Cart = () => {
 
   // introduce the payment gateway
   const makePayment = async () => {
-    const stripePublicKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
-    const stripe = await loadStripe(stripePublicKey);
+    const stripePublicKey = import.meta.env.VITE_REACT_APP_STRIPE_PUBLIC_KEY;
+  
+  if (!stripePublicKey) {
+    throw new Error("Stripe public key is not defined in environment variables");
+  }
+
+  const stripe = await loadStripe(stripePublicKey);
 
     const body = {
       products: cartProducts,
