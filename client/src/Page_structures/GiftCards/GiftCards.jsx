@@ -15,13 +15,13 @@ const GiftCards = () => {
             <div className='h-full w-full flex md:flex-row flex-col items-center justify-center gap-16'>
               <div className='rounded-md p-10 h-[300px] md:h-full md:w-2/5 space-y-10 w-4/5 flex flex-col items-center justify-center bg-lightish'>
               <h1 className='text-2xl font-bold'>Coffee</h1>
-              <span className='text-xs'>Buy to generate code</span>
+              <span className='text-sm flex text-center'>Buy to generate QR code</span>
               <span className='text-xl font-bold'>Rs 300</span>
               <button className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown hover:text-white' onClick={handleGiftButton}>Buy</button>
               </div>
               <div className='rounded-md p-10 h-[300px] md:h-full md:w-2/5 space-y-10 w-4/5 flex flex-col items-center justify-center bg-lightish'>
               <h1 className='text-2xl font-bold'>Dessert</h1>
-              <span className='text-sm'>Buy to generate code</span>
+              <span className='text-sm flex text-center'>Buy to generate QR code</span>
               <span className='text-xl font-bold'>Rs 300</span>
               <button className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown hover:text-white' onClick={handleGiftButton}>Buy</button>
               </div>

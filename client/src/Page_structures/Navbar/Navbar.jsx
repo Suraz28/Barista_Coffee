@@ -38,6 +38,10 @@ const Navbar = () => {
         );
     }, []);
 
+    const handleAlert = () => {
+        alert('underDevelopment');
+    }
+
     return (
             <div className='navbar'>
                 <div className='logoimage'>
@@ -100,7 +104,7 @@ const Navbar = () => {
                         )}
                             </div>
                             <Link to='/giftcards'>
-                            <button className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown'>Gift Cards</button>
+                            <button onClick={handleAlert} className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown'>Gift Cards</button>
                             </Link>
                         </div>
                     </div>
