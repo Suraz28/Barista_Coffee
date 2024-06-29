@@ -8,6 +8,7 @@ import Success from './Page_structures/Success/Success';
 import Cancel from './Page_structures/Cancel/Cancel';
 import Testimonial from './Page_structures/Testimonial/Testmonial';
 import Claim from './Page_structures/Claim/Claim';
+import { Analytics } from '@vercel/analytics/react';
 
 // Lazy load all components
 const Home = React.lazy(() => import('./Page_structures/Home/Home'));
@@ -37,6 +38,7 @@ const App = ({
   };
 
   return (
+    <>
     <Provider store={Store}>
       <Router>
         <Routes>
@@ -99,6 +101,8 @@ const App = ({
         </Suspense>
       </Router>
     </Provider>
+    <Analytics/>
+    </>
   );
 }
 
