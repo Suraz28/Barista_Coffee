@@ -37,10 +37,7 @@ const Navbar = () => {
             window.removeEventListener("resize", handleResize)
         );
     }, []);
-
-    const handleAlert = () => {
-        alert('underDevelopment');
-    }
+    
 
     return (
             <div className='navbar'>
@@ -104,7 +101,7 @@ const Navbar = () => {
                         )}
                             </div>
                             <Link to='/giftcards'>
-                            <button onClick={handleAlert} className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown'>Gift Cards</button>
+                            <button className='button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown'>Gift Cards</button>
                             </Link>
                         </div>
                     </div>
