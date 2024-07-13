@@ -62,9 +62,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 25%; /* w-1/4 */
+  width: 100%;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1.25rem; /* gap-5 for _footer_1, gap-2 for others */
 }
 
@@ -113,4 +113,13 @@
     height: 100%;
     width: 100%;
   }
+  .footer ._footer ._footer_3_4 {
+    width: 100%;
+  }
+}
+
+.footer ._footer ._footer_3_4 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
