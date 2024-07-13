@@ -48,7 +48,7 @@
   width: 90%;
   background-color: black;
   border-radius: 0.375rem; /* rounded-md */
-  gap: 4rem; /* gap-16 */
+  gap: 4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -64,7 +64,7 @@
   height: 100%;
   width: 100%;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 1.25rem; /* gap-5 for _footer_1, gap-2 for others */
 }
 
@@ -107,6 +107,9 @@
     height: 100%;
     width: 90%;
   }
+  ._footer ._footer_3_4 {
+    gap: 100px;
+  }
 }
 @media (max-width: 768px) {
   ._footer {
@@ -121,5 +124,6 @@
 .footer ._footer ._footer_3_4 {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
 }
