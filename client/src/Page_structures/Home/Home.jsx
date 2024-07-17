@@ -1,18 +1,13 @@
 import { useEffect } from "react";
-import {
-  motion,
-  useAnimation,
-  useViewportScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 
 const Home = () => {
   const controls = useAnimation();
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
 
-  const y = useTransform(scrollY, [0, 300], [50, -200]);
+  const y = useTransform(scrollY, [0, 400], [50, -200]);
 
   useEffect(() => {
     const isMounted = sessionStorage.getItem("isMounted");

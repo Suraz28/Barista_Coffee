@@ -6,16 +6,26 @@ import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const controls = useAnimation();
-  const imgControls1 = useAnimation(); // Animation controls for the first image
-  const imgControls2 = useAnimation(); // Animation controls for the second image
-  const buttonControls = useAnimation(); // Animation controls for the button
-  const { ref, inView } = useInView({
-    triggerOnce: false, // Trigger animation each time element comes into view
-    threshold: 0, // Trigger when 10% of element is in view
+  const imgControls1 = useAnimation();
+  const imgControls2 = useAnimation();
+  const buttonControls = useAnimation();
+
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
+  const { ref: paragraphRef, inView: paragraphInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.3, // Adjust this value to control the threshold for the paragraph
+  });
+  const { ref: buttonRef, inView: buttonInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3, // Adjust this value to control the threshold for the paragraph
   });
 
   useEffect(() => {
-    if (inView) {
+    if (sectionInView) {
       controls.start("visible");
       imgControls1.start("visible");
       imgControls2.start("visible");
@@ -26,7 +36,7 @@ const About = () => {
       imgControls2.start("hidden");
       buttonControls.start("hidden");
     }
-  }, [controls, imgControls1, imgControls2, buttonControls, inView]);
+  }, [controls, imgControls1, imgControls2, buttonControls, sectionInView]);
 
   return (
     <div
@@ -35,7 +45,7 @@ const About = () => {
     >
       <div className="md:h-[90%] md:min-h-screen md:w-[90%] w-full bg-black rounded-md flex flex-col gap-5 p-8 md:py-10">
         <div
-          ref={ref}
+          ref={sectionRef}
           className="_about_heading flex items-center justify-evenly gap-10 py-10 w-full h-1/4"
         >
           <motion.img
@@ -78,9 +88,10 @@ const About = () => {
           </div>
           <div className="_about_content h-full flex flex-col gap-5 p-4">
             <motion.p
+              ref={paragraphRef}
               className="_paragraph text-sm text-justify"
               initial={{ opacity: 0, y: 100 }}
-              animate={controls}
+              animate={paragraphInView ? "visible" : "hidden"}
               transition={{ duration: 1 }}
               variants={{
                 visible: { opacity: 1, y: 0 },
@@ -103,12 +114,13 @@ const About = () => {
             <Link to="/barista_story">
               <motion.button
                 className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown"
-                initial={{ opacity: 0, y: 50 }}
-                animate={buttonControls}
+                ref={buttonRef}
+                initial={{ opacity: 0, y: 100 }}
+                animate={buttonInView ? "visible" : "hidden"}
                 transition={{ duration: 1, delay: 0.4 }}
                 variants={{
                   visible: { opacity: 1, y: 0 },
-                  hidden: { opacity: 0, y: 50 },
+                  hidden: { opacity: 0, y: 100 },
                 }}
               >
                 Read More
