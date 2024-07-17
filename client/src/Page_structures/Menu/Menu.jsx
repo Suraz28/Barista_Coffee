@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -6,7 +6,8 @@ import "./Menu.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Slices/CartSlice";
 import { SyncLoader } from "react-spinners";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // menu items to show
 const menu = [
@@ -130,9 +131,19 @@ const dessert_settings = {
 };
 
 const Menu = () => {
-  const { scrollY } = useScroll();
-  const xMenu = useTransform(scrollY, [0, 600], [-300, 0]);
-  const opacityMenu = useTransform(scrollY, [0, 100], [0, 1]);
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
 
   // get the cartproducts from store
   const cartProducts = useSelector((state) => state.products.cartProducts);
@@ -169,8 +180,14 @@ const Menu = () => {
         <div className=" h-auto w-full flex flex-col items-center justify-center p-3">
           <motion.h1
             className="active text-dark-brown text-xl font-bold mt-10"
-            style={{ x: xMenu, opacity: opacityMenu }}
-            transition={{ duration: 2 }}
+            ref={ref}
+            initial={{ opacity: 0, x: -300 }}
+            animate={controls}
+            transition={{ duration: 0.8 }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: -300 },
+            }}
           >
             Our Menu
           </motion.h1>
