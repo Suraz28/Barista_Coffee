@@ -60,22 +60,22 @@
 
 .animate .home_h1 {
   animation: fadeInLeft 0.8s ease-in-out forwards;
-  animation-delay: 0s;
+  animation-delay: 0.3s;
 }
 
 .animate .home_quote {
   animation: fadeInLeft 0.8s ease-in-out forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.6s;
 }
 
 .animate .home_desc {
   animation: fadeInLeft 0.8s ease-in-out forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.9s;
 }
 
 .animate .home_buttons {
   animation: fadeInLeft 0.8s ease-in-out forwards;
-  animation-delay: 1.2s;
+  animation-delay: 1.3s;
 }
 
 /* Ensure elements have opacity 1 when not animating */
