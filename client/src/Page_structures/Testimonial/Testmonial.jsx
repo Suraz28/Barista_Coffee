@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const testimonials = [
   {
@@ -42,6 +44,20 @@ const settings = {
 };
 
 const Testimonial = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
     <div
       className="h-auto flex flex-col items-center justify-center w-full"
@@ -52,9 +68,19 @@ const Testimonial = () => {
           <div className="h-auto px-4 mx-auto max-w-7xl lg:px-8">
             <div className="h-auto flex flex-col items-center">
               <div className="text-center">
-                <h2 className="text-3xl p-5 pb-10 font-bold text-gray-900 sm:text-4xl xl:text-5xl">
+                <motion.h2
+                  className="text-3xl p-5 pb-10 font-bold text-gray-900 sm:text-4xl xl:text-5xl"
+                  ref={ref}
+                  initial={{ opacity: 0, x: 300 }}
+                  animate={controls}
+                  transition={{ duration: 0.8 }}
+                  variants={{
+                    visible: { opacity: 1, x: 0 },
+                    hidden: { opacity: 0, x: 300 },
+                  }}
+                >
                   What clients say about us
-                </h2>
+                </motion.h2>
               </div>
               <div className="relative mt-2 md:order-2">
                 <div className="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6">
