@@ -6,6 +6,7 @@ import "./Menu.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Slices/CartSlice";
 import { SyncLoader } from "react-spinners";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 // menu items to show
 const menu = [
@@ -129,6 +130,10 @@ const dessert_settings = {
 };
 
 const Menu = () => {
+  const { scrollY } = useViewportScroll();
+  const xMenu = useTransform(scrollY, [0, 600], [-300, 0]);
+  const opacityMenu = useTransform(scrollY, [0, 100], [0, 1]);
+
   // get the cartproducts from store
   const cartProducts = useSelector((state) => state.products.cartProducts);
   const dispatch = useDispatch();
@@ -162,9 +167,13 @@ const Menu = () => {
     >
       <div className="md:h-[90%] md:w-[90%] w-full bg-background rounded-md flex flex-col p-4">
         <div className=" h-auto w-full flex flex-col items-center justify-center p-3">
-          <h1 className="active text-dark-brown text-xl font-bold mt-10">
+          <motion.h1
+            className="active text-dark-brown text-xl font-bold mt-10"
+            style={{ x: xMenu, opacity: opacityMenu }}
+            transition={{ duration: 2 }}
+          >
             Our Menu
-          </h1>
+          </motion.h1>
           <Slider {...coffee_settings} className="w-full">
             {menu.map((coffee) => (
               <div key={coffee.id} className="px-4 py-8">

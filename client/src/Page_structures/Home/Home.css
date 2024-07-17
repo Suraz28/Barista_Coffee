@@ -39,3 +39,49 @@
     position: absolute;
   }
 }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home_h1,
+.home_quote,
+.home_desc,
+.home_buttons {
+  opacity: 0;
+}
+
+.animate .home_h1 {
+  animation: fadeInLeft 0.8s ease-in-out forwards;
+  animation-delay: 0s;
+}
+
+.animate .home_quote {
+  animation: fadeInLeft 0.8s ease-in-out forwards;
+  animation-delay: 0.4s;
+}
+
+.animate .home_desc {
+  animation: fadeInLeft 0.8s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+.animate .home_buttons {
+  animation: fadeInLeft 0.8s ease-in-out forwards;
+  animation-delay: 1.2s;
+}
+
+/* Ensure elements have opacity 1 when not animating */
+.home_content:not(.animate) .home_h1,
+.home_content:not(.animate) .home_quote,
+.home_content:not(.animate) .home_desc,
+.home_content:not(.animate) .home_buttons {
+  opacity: 1;
+}
