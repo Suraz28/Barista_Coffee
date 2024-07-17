@@ -6,7 +6,7 @@ import "./Menu.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Slices/CartSlice";
 import { SyncLoader } from "react-spinners";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 // menu items to show
 const menu = [
@@ -130,7 +130,7 @@ const dessert_settings = {
 };
 
 const Menu = () => {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const xMenu = useTransform(scrollY, [0, 600], [-300, 0]);
   const opacityMenu = useTransform(scrollY, [0, 100], [0, 1]);
 
