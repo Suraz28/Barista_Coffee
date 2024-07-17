@@ -134,7 +134,7 @@ const Menu = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: false,
-    threshold: 0.1,
+    threshold: 0.5,
   });
 
   useEffect(() => {
@@ -181,12 +181,12 @@ const Menu = () => {
           <motion.h1
             className="active text-dark-brown text-xl font-bold mt-10"
             ref={ref}
-            initial={{ opacity: 0, x: -300 }}
+            initial={{ opacity: 0, y: -100 }}
             animate={controls}
             transition={{ duration: 0.8 }}
             variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: -300 },
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: -100 },
             }}
           >
             Our Menu

@@ -47,7 +47,7 @@ const Testimonial = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: false,
-    threshold: 0.1,
+    threshold: 0.5,
   });
 
   useEffect(() => {
@@ -71,12 +71,12 @@ const Testimonial = () => {
                 <motion.h2
                   className="text-3xl p-5 pb-10 font-bold text-gray-900 sm:text-4xl xl:text-5xl"
                   ref={ref}
-                  initial={{ opacity: 0, x: 300 }}
+                  initial={{ opacity: 0, y: 100 }}
                   animate={controls}
                   transition={{ duration: 0.8 }}
                   variants={{
-                    visible: { opacity: 1, x: 0 },
-                    hidden: { opacity: 0, x: 300 },
+                    visible: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, y: 100 },
                   }}
                 >
                   What clients say about us

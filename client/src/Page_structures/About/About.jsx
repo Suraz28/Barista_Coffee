@@ -11,7 +11,7 @@ const About = () => {
   const buttonControls = useAnimation(); // Animation controls for the button
   const { ref, inView } = useInView({
     triggerOnce: false, // Trigger animation each time element comes into view
-    threshold: 0.1, // Trigger when 10% of element is in view
+    threshold: 0, // Trigger when 10% of element is in view
   });
 
   useEffect(() => {
@@ -41,22 +41,22 @@ const About = () => {
           <motion.img
             src="./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png"
             className="h-20"
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, y: -100 }}
             animate={controls}
             transition={{ duration: 0.6 }}
             variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: -100 },
             }}
           />
           <motion.h1
             className="md:text-3xl md:pl-5 sm:text-2xl text-xl font-bold text-center"
-            initial={{ opacity: 0, x: 150 }}
+            initial={{ opacity: 0, y: 100 }}
             animate={controls}
             transition={{ duration: 0.6 }}
             variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: 100 },
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 100 },
             }}
           >
             Know the Story of Barista
@@ -67,24 +67,24 @@ const About = () => {
             <motion.img
               src="./Project_images/Graphics/Coffee_graphic-1.jpg"
               className=" h-60 rounded-md"
-              initial={{ opacity: 0, x: -100 }}
+              initial={{ opacity: 0, y: -100 }}
               animate={imgControls1}
               transition={{ duration: 1 }}
               variants={{
-                visible: { opacity: 1.5, x: 0 },
-                hidden: { opacity: 0, x: -100 },
+                visible: { opacity: 1.5, y: 0 },
+                hidden: { opacity: 0, y: -100 },
               }}
             />
           </div>
           <div className="_about_content h-full flex flex-col gap-5 p-4">
             <motion.p
               className="_paragraph text-sm text-justify"
-              initial={{ opacity: 0, x: 100 }}
+              initial={{ opacity: 0, y: 100 }}
               animate={controls}
               transition={{ duration: 1 }}
               variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 100 },
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 100 },
               }}
             >
               Barista Coffee is more than just a coffee shop; it is a testament
