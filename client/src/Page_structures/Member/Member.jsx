@@ -135,7 +135,7 @@ const Member = () => {
                     className="_input border border-none focus focus:outline-none md:p-3 p-2 text-sm rounded-md w-[350px] bg-teal-900 text-white"
                     initial={{ opacity: 0, y: 100 }}
                     animate={controls}
-                    transition={{ duration: 0.8, delay: 0.6 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: 100 },
@@ -147,7 +147,7 @@ const Member = () => {
                       className="text-sm"
                       initial={{ opacity: 0, y: 100 }}
                       animate={controls}
-                      transition={{ duration: 0.8, delay: 0.8 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
                       variants={{
                         visible: { opacity: 1, y: 0 },
                         hidden: { opacity: 0, y: 100 },
@@ -161,7 +161,7 @@ const Member = () => {
                     type="submit"
                     initial={{ opacity: 0, y: 100 }}
                     animate={controls}
-                    transition={{ duration: 0.8, delay: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: 100 },
