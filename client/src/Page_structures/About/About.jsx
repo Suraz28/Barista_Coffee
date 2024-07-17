@@ -81,7 +81,7 @@ const About = () => {
               className="_paragraph text-sm text-justify"
               initial={{ opacity: 0, x: 150 }}
               animate={controls}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 1 }}
               variants={{
                 visible: { opacity: 1, x: 0 },
                 hidden: { opacity: 0, x: 150 },
@@ -105,7 +105,7 @@ const About = () => {
                 className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown"
                 initial={{ opacity: 0, y: 50 }}
                 animate={buttonControls}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 1, delay: 0.4 }}
                 variants={{
                   visible: { opacity: 1, y: 0 },
                   hidden: { opacity: 0, y: 50 },
