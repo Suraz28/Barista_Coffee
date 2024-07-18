@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./Navbar.css";
 import { HiBars3BottomRight } from "react-icons/hi2";
@@ -9,9 +9,41 @@ import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  // get the cart products from the store
+  const cartProducts = useSelector((state) => state.products.cartProducts);
+
+  const [isNavOpen, setIsNavOpen] = useState(true);
+  const [activeLink, setActiveLink] = useState("");
+
+  // close the open nav when touch outside the nav
+  const navRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target) &&
+        window.innerWidth < 768
+      ) {
+        setIsNavOpen(false);
+      }
+    };
+
+    if (isNavOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isNavOpen]);
+
+  //use scroll animation
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -50]);
 
+  // update the navbar to animate on mount
   useEffect(() => {
     const isMounted = sessionStorage.getItem("isNavbar");
     if (!isMounted) {
@@ -21,19 +53,16 @@ const Navbar = () => {
     }
   }, []);
 
-  const cartProducts = useSelector((state) => state.products.cartProducts);
-
-  const [isNavOpen, setIsNavOpen] = useState(true);
-  const [activeLink, setActiveLink] = useState("");
-
   const toggleNavOpen = () => {
     setIsNavOpen(!isNavOpen);
   };
 
+  // set the active nav
   const handleSetActive = (to) => {
     setActiveLink(to);
   };
 
+  // update the nav based on the screen width
   useEffect(() => {
     if (window.innerWidth < 768) {
       setIsNavOpen(false);
@@ -44,6 +73,11 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // scroll to where you left the position. works for all the component.
+  const handleScrollPosition = () => {
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+  };
 
   return (
     <motion.div className={`navbar ${isNavOpen ? "open" : ""}`} style={{ y }}>
@@ -73,7 +107,7 @@ const Navbar = () => {
         </div>
       </div>
       {isNavOpen && (
-        <div className="navcart">
+        <div className="navcart" ref={navRef}>
           <div className="navtext">
             <Scroll
               to="home"
@@ -116,7 +150,7 @@ const Navbar = () => {
               <span>Contact</span>
             </Scroll>
           </div>
-          <div className="icons">
+          <div className="icons" onClick={handleScrollPosition}>
             <div className="itemcount">
               <Link to="/cart">
                 <IoCartOutline
