@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   decreaseQuantity,
   increaseQuantity,
@@ -10,9 +11,19 @@ import {
 import { loadStripe } from "@stripe/stripe-js";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [discount, setDiscount] = useState(0);
   const [coupon, setCoupon] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  // When navigating back from cart page to the original position
+  const handleGoBack = () => {
+    const scrollPosition = sessionStorage.getItem("scrollPosition");
+    if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition, 10));
+    }
+    navigate(-1); // Navigate back to the previous page
+  };
 
   // import the cart products form store
   const cartProducts = useSelector((state) => state.products.cartProducts);
@@ -129,7 +140,10 @@ const Cart = () => {
             />
           </Link>
           <Link to="/">
-            <span className="flex items-center justify-center underline text-sm">
+            <span
+              className="flex items-center justify-center underline text-sm"
+              onClick={handleGoBack}
+            >
               Go back
             </span>
           </Link>
