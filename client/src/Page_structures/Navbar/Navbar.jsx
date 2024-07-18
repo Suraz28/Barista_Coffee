@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  motion,
-  useAnimation,
-  useViewportScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import "./Navbar.css";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { LiaTimesSolid } from "react-icons/lia";
@@ -14,8 +9,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const controls = useAnimation();
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -50]);
 
   useEffect(() => {
@@ -52,7 +46,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.div className="navbar" style={{ y }}>
+    <motion.div className={`navbar ${isNavOpen ? "open" : ""}`} style={{ y }}>
       <div className="logoimage">
         <Link to="/">
           <img

@@ -11,6 +11,13 @@
   margin-top: 40px;
 }
 
+@media screen and (max-width: 768px) {
+  .navbar.open .navcart {
+    backdrop-filter: blur(8px);
+    transition: 0.3s ease all;
+  }
+}
+
 .logoimage img {
   height: 40px;
   width: auto;
@@ -20,10 +27,10 @@
 .navcart {
   display: flex;
   width: 100%;
+  transition: transform 0.5s ease all;
 }
 
 .navtext {
-  /* background-color: aqua; */
   display: flex;
   width: 100%;
   gap: 30px;
@@ -37,7 +44,6 @@
 }
 
 .icons {
-  /* background-color: yellow; */
   display: flex;
   justify-content: flex-end;
   gap: 20px;
@@ -89,7 +95,6 @@
   .navcart {
     top: 0;
     margin-top: 50px;
-    backdrop-filter: blur(10px);
     position: absolute;
     flex-direction: column;
     align-items: center;
@@ -97,6 +102,7 @@
     width: 100%;
     gap: 20px;
     padding: 10px 0;
+    transition: 0.3s ease all;
   }
   .logoimage {
     display: flex;
@@ -112,7 +118,6 @@
     }
   }
   .icons {
-    /* background-color: rgb(214, 228, 19); */
     align-items: flex-end;
     justify-content: center;
     height: 40px;
