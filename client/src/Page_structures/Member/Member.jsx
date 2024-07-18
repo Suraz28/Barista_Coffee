@@ -10,17 +10,15 @@ const Member = () => {
   const [emailError, setEmailError] = useState(null);
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    triggerOnce: false, // Trigger animation each time element comes into view
-    threshold: 0.2, // Trigger when 20% of element is in view
+    triggerOnce: false,
+    threshold: 0.2,
   });
 
-  // get the member detail from the local storage
   useEffect(() => {
     const isMember = localStorage.getItem("member") === "true";
     setMember(isMember);
   }, []);
 
-  // email validation
   const validateEmail = (email) => {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
@@ -36,7 +34,7 @@ const Member = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) {
+    if (email.trim() == "") {
       setEmailError("Email is required");
       setTimeout(() => {
         setEmailError(null);
@@ -52,16 +50,12 @@ const Member = () => {
     }
     setEmailError(null);
     setMember(true);
-    // store the member detail to the local storage
     localStorage.setItem("member", "true");
     setEmail("");
   };
 
   return (
-    <div
-      className="_member h-[70vh] flex flex-row items-center justify-center text-black"
-      id="member"
-    >
+    <div className="_member h-[70vh] flex flex-row items-center justify-center text-black">
       <div
         className="member_image bg-cover bg-center md:h-[100%] md:w-[90%] w-full h-full bg-white rounded-md flex flex-col md:flex-row"
         ref={ref}
@@ -129,6 +123,7 @@ const Member = () => {
                     name="email"
                     id="email"
                     placeholder="E-mail"
+                    // required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     autoComplete="off"
@@ -142,17 +137,7 @@ const Member = () => {
                     }}
                   />
                   {emailError && (
-                    <motion.p
-                      style={{ color: "red" }}
-                      className="text-sm"
-                      initial={{ opacity: 0, y: 100 }}
-                      animate={controls}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                      variants={{
-                        visible: { opacity: 1, y: 0 },
-                        hidden: { opacity: 0, y: 100 },
-                      }}
-                    >
+                    <motion.p className="text-sm text-red-500">
                       {emailError}
                     </motion.p>
                   )}
