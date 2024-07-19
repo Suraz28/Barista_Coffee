@@ -57,6 +57,12 @@ const Navbar = () => {
     setIsNavOpen(!isNavOpen);
   };
 
+  const toggleNavForSmallScreen = () => {
+    if (window.innerWidth < 768) {
+      setIsNavOpen(!isNavOpen);
+    }
+  };
+
   // set the active nav
   const handleSetActive = (to) => {
     setActiveLink(to);
@@ -117,7 +123,7 @@ const Navbar = () => {
               onSetActive={handleSetActive}
               activeClass={activeLink === "home" ? "active" : ""}
             >
-              <span>Home</span>
+              <span onClick={toggleNavForSmallScreen}>Home</span>
             </Scroll>
             <Scroll
               to="menu"
@@ -127,7 +133,7 @@ const Navbar = () => {
               onSetActive={handleSetActive}
               activeClass={activeLink === "menu" ? "active" : ""}
             >
-              <span>Menu</span>
+              <span onClick={toggleNavForSmallScreen}>Menu</span>
             </Scroll>
             <Scroll
               to="about"
@@ -137,7 +143,7 @@ const Navbar = () => {
               onSetActive={handleSetActive}
               activeClass={activeLink === "about" ? "active" : ""}
             >
-              <span>About</span>
+              <span onClick={toggleNavForSmallScreen}>About</span>
             </Scroll>
             <Scroll
               to="contact"
@@ -147,7 +153,7 @@ const Navbar = () => {
               onSetActive={handleSetActive}
               activeClass={activeLink === "contact" ? "active" : ""}
             >
-              <span>Contact</span>
+              <span onClick={toggleNavForSmallScreen}>Contact</span>
             </Scroll>
           </div>
           <div className="icons" onClick={handleScrollPosition}>
@@ -156,12 +162,16 @@ const Navbar = () => {
                 <IoCartOutline
                   className="carticon"
                   style={{ fontSize: "35px", cursor: "pointer" }}
+                  onClick={toggleNavForSmallScreen}
                 />
               </Link>
               {cartProducts.length > 0 && <span>{cartProducts.length}</span>}
             </div>
             <Link to="/giftcards">
-              <button className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown">
+              <button
+                className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown"
+                onClick={toggleNavForSmallScreen}
+              >
                 Gift Cards
               </button>
             </Link>
