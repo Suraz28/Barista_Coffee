@@ -7,7 +7,6 @@ import Store from "./Page_structures/Store/Store";
 import Success from "./Page_structures/Success/Success";
 import Cancel from "./Page_structures/Cancel/Cancel";
 import Testimonial from "./Page_structures/Testimonial/Testmonial";
-import Claim from "./Page_structures/Claim/Claim";
 import { Analytics } from "@vercel/analytics/react";
 
 // Lazy load all components
