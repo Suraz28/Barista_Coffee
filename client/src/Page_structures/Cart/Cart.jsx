@@ -16,14 +16,14 @@ const Cart = () => {
   const [coupon, setCoupon] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  // When navigating back from cart page to the original position
-  const handleGoBack = () => {
-    const scrollPosition = sessionStorage.getItem("scrollPosition");
-    if (scrollPosition) {
-      window.scrollTo(0, parseInt(scrollPosition, 10));
-    }
-    navigate(-1); // Navigate back to the previous page
-  };
+  // // When navigating back from cart page to the original position
+  // const handleGoBack = () => {
+  //   const scrollPosition = sessionStorage.getItem("scrollPosition");
+  //   if (scrollPosition) {
+  //     window.scrollTo(0, parseInt(scrollPosition, 10));
+  //   }
+  //   navigate(-1); // Navigate back to the previous page
+  // };
 
   // import the cart products form store
   const cartProducts = useSelector((state) => state.products.cartProducts);
@@ -142,7 +142,7 @@ const Cart = () => {
           <Link to="/">
             <span
               className="flex items-center justify-center underline text-sm"
-              onClick={handleGoBack}
+              // onClick={handleGoBack}
             >
               Go back
             </span>
