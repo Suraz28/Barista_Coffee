@@ -7,7 +7,7 @@ const Home = () => {
   const controls = useAnimation();
   const { scrollY } = useScroll();
 
-  const y = useTransform(scrollY, [0, 400], [50, -200]);
+  const y = useTransform(scrollY, [0, 400], [0, -200]);
 
   useEffect(() => {
     const isMounted = sessionStorage.getItem("isMounted");
