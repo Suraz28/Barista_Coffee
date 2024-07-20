@@ -15,6 +15,7 @@ const Cart = () => {
   const [discount, setDiscount] = useState(0);
   const [coupon, setCoupon] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(false);
 
   // When navigating back from cart page to the original position
   const handleGoBack = () => {
@@ -62,8 +63,10 @@ const Cart = () => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setIsModalVisible(true);
+        setSmallScreen(true);
       } else {
         setIsModalVisible(false);
+        setSmallScreen(false);
       }
     };
 
@@ -127,7 +130,7 @@ const Cart = () => {
       className="h-screen flex flex-row items-center justify-center text-black"
       id="home"
     >
-      <div className="md:h-[100%] md:w-[90%] h-full w-full bg-white rounded-md flex flex-col p-2">
+      <div className="md:h-[100%] md:w-[90%] h-full w-full bg-white rounded-md flex flex-col justify-between p-2">
         <div className="cart_nav flex flex-row px-4 w-full items-center justify-between p-3">
           <Link to="/">
             <img
@@ -148,6 +151,42 @@ const Cart = () => {
         {cartProducts.length === 0 ? (
           <div className="text-gray-300 text-xl font-bold w-full h-full flex items-center justify-center">
             Your cart is empty
+          </div>
+        ) : smallScreen ? (
+          <div className="w-full h-auto overflow-y-auto">
+            {cartProducts.map((product, index) => (
+              <div
+                className="w-full items-center justify-between flex flex-row mb-4"
+                key={index}
+              >
+                <img src={product.image} className="h-28" alt={product.title} />
+                <div className="w-full items-center justify-center flex flex-col gap-4 text-xsm">
+                  <span className="text-sm font-bold">{product.title}</span>
+                  <span className="text-xs">
+                    <button
+                      className="px-3 py-0 border border-black rounded-full md:hover:bg-dark-brown md:hover:text-white"
+                      onClick={() => handleDecreaseQuantity(index)}
+                    >
+                      -
+                    </button>
+                    <span className="mx-2 px-2">{product.count}</span>
+                    <button
+                      className="px-3 py-0 border border-black rounded-full md:hover:bg-dark-brown md:hover:text-white"
+                      onClick={() => handleIncreaseQuantity(index)}
+                    >
+                      +
+                    </button>
+                  </span>
+                  Rs {calculateSubtotal(product.price, product.count)}
+                </div>
+                <button
+                  className="px-2 py-1 text-3xl md:hover:bg-dark-brown rounded-full md:hover:shadow-md text-red-500"
+                  onClick={() => handleRemoveFromCart(index)}
+                >
+                  <MdOutlineDelete />
+                </button>
+              </div>
+            ))}
           </div>
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-start overflow-y-auto text-white">
@@ -211,7 +250,7 @@ const Cart = () => {
         )}
         {cartProducts.length > 0 && (
           <div>
-            <div className="flex flex-col md:flex-row items-center justify-between w-full my-4 gap-2 px-4 text-sm">
+            <div className="flex flex-col md:flex-row items-center justify-between w-full my-4 gap-2 md:px-4 px-0 text-sm">
               <input
                 className="w-full p-3 border-none focus:outline-none bg-lightish"
                 placeholder="Coupon Code = barista_coffee"
@@ -233,7 +272,7 @@ const Cart = () => {
                 </button>
               </span>
             </div>
-            <div className="bg-dark-brown text-white p-4 flex flex-col md:flex-row items-start md:items-center justify-around mx-4 text-sm">
+            <div className="bg-dark-brown text-white p-4 flex flex-col md:flex-row items-start md:items-center justify-around md:mx-4 mx-0 text-sm">
               <span>Discount: Rs {discount}</span>
               <span>Shipping Fee: No Shipping Fee</span>
               <span>Total: Rs {total - discount}</span>
