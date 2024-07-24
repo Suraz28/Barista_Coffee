@@ -86,7 +86,7 @@ const Navbar = () => {
   };
 
   return (
-    <motion.div className={`navbar ${isNavOpen ? "open" : ""}`} style={{ y }}>
+    <motion.div className="navbar" style={{ y }}>
       <div className="logoimage">
         <Link to="/">
           <img
@@ -113,7 +113,7 @@ const Navbar = () => {
         </div>
       </div>
       {isNavOpen && (
-        <div className="navcart" ref={navRef}>
+        <div className={`navcart ${isNavOpen ? "open" : ""}`} ref={navRef}>
           <div className="navtext">
             <Scroll
               to="home"
