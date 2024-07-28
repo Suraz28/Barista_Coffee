@@ -27,8 +27,7 @@ const testimonials = [
     text: "Absolutely the best coffee I've ever had! The rich, bold flavor and enticing aroma make every cup a delightful experience. The barista's skill in crafting each brew is evident in every sip. Highly recommended for all coffee lovers!",
     author: "John Doe",
     role: "Software Engineer",
-    avatar:
-      "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-3.png",
+    avatar: "https://ntrepidcorp.com/wp-content/uploads/2016/06/team-1.jpg",
   },
 ];
 
