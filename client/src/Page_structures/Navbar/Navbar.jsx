@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="nav_image">
         <img
           className="nav_logo_image"
-          src="./public/Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png"
+          src="./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png"
         />
         <span className="bars">
           {navopen ? (
