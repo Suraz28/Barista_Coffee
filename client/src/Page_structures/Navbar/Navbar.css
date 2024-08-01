@@ -79,6 +79,7 @@
   border-radius: 6px;
   background-color: rgb(246 164 83);
   color: whitesmoke;
+  font-weight: lighter;
   &:hover {
     background-color: rgb(51 34 25);
   }
