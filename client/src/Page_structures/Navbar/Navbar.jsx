@@ -1,34 +1,31 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import "./Navbar.css";
-import { HiBars3BottomRight } from "react-icons/hi2";
-import { LiaTimesSolid } from "react-icons/lia";
+import { useState, useEffect, useRef } from "react";
+import { FaBarsStaggered } from "react-icons/fa6";
+import { IoCartOutline } from "react-icons/io5";
+import { RxCross2 } from "react-icons/rx";
 import { Link as Scroll } from "react-scroll";
 import { Link } from "react-router-dom";
-import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import "./Navbar.css";
 
 const Navbar = () => {
-  // get the cart products from the store
+  const [navopen, setNavOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+  const navRef = useRef(null);
+
   const cartProducts = useSelector((state) => state.products.cartProducts);
 
-  const [isNavOpen, setIsNavOpen] = useState(true);
-  const [activeLink, setActiveLink] = useState("");
+  const handleSetActive = (to) => {
+    setActiveLink(to);
+  };
 
-  // close the open nav when touch outside the nav
-  const navRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        navRef.current &&
-        !navRef.current.contains(event.target) &&
-        window.innerWidth < 768
-      ) {
-        setIsNavOpen(false);
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setNavOpen(false);
       }
     };
 
-    if (isNavOpen) {
+    if (navopen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -37,48 +34,30 @@ const Navbar = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isNavOpen]);
+  }, [navopen]);
 
-  //use scroll animation
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 300], [0, -50]);
-
-  // update the navbar to animate on mount
   useEffect(() => {
-    const isMounted = sessionStorage.getItem("isNavbar");
-    if (!isMounted) {
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.add("animate");
-      sessionStorage.setItem("isNavbar", "true");
-    }
+    const handleResize = () => {
+      if (window.innerWidth < 769) {
+        setNavOpen(false);
+      } else {
+        setNavOpen(true);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleNavOpen = () => {
-    setIsNavOpen(!isNavOpen);
+  const toggle = () => {
+    setNavOpen(!navopen);
   };
 
   const toggleNavForSmallScreen = () => {
     if (window.innerWidth < 768) {
-      setIsNavOpen(!isNavOpen);
+      setNavOpen(!navopen);
     }
   };
-
-  // set the active nav
-  const handleSetActive = (to) => {
-    setActiveLink(to);
-  };
-
-  // update the nav based on the screen width
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsNavOpen(false);
-    }
-    const handleResize = () => {
-      setIsNavOpen(window.innerWidth > 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // scroll to where you left the position. works for all the component.
   const handleScrollPosition = () => {
@@ -86,35 +65,30 @@ const Navbar = () => {
   };
 
   return (
-    <motion.div className="navbar" style={{ y }}>
-      <div className="logoimage">
-        <Link to="/">
-          <img
-            src="./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png"
-            alt="logo"
-          />
-        </Link>
-        <div className="barscross">
-          {isNavOpen ? (
-            <span>
-              <LiaTimesSolid
-                onClick={toggleNavOpen}
-                style={{ fontSize: "20px" }}
-              />
-            </span>
+    <div className="navbar">
+      <div className="nav_image">
+        <img
+          className="nav_logo_image"
+          src="./public/Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png"
+        />
+        <span className="bars">
+          {navopen ? (
+            <RxCross2
+              onClick={toggle}
+              style={{ fontSize: "20px", cursor: "pointer" }}
+            />
           ) : (
-            <span>
-              <HiBars3BottomRight
-                onClick={toggleNavOpen}
-                style={{ fontSize: "20px" }}
-              />
-            </span>
+            <FaBarsStaggered
+              onClick={toggle}
+              style={{ fontSize: "20px", cursor: "pointer" }}
+            />
           )}
-        </div>
+        </span>
       </div>
-      {isNavOpen && (
-        <div className={`navcart ${isNavOpen ? "open" : ""}`} ref={navRef}>
-          <div className="navtext">
+
+      <div className={`nav_links_cart ${navopen ? "open" : ""}`} ref={navRef}>
+        <div className="nav_links">
+          <div className="nav_links_texts">
             <Scroll
               to="home"
               spy={true}
@@ -156,29 +130,30 @@ const Navbar = () => {
               <span onClick={toggleNavForSmallScreen}>Contact</span>
             </Scroll>
           </div>
-          <div className="icons" onClick={handleScrollPosition}>
-            <div className="itemcount">
+          <div className="nav_cart">
+            <div className="itemcount" onClick={handleScrollPosition}>
               <Link to="/cart">
                 <IoCartOutline
                   className="carticon"
-                  style={{ fontSize: "35px", cursor: "pointer" }}
-                  onClick={toggleNavForSmallScreen}
+                  style={{ fontSize: "25px", cursor: "pointer" }}
                 />
               </Link>
-              {cartProducts.length > 0 && <span>{cartProducts.length}</span>}
+              {cartProducts.length > 0 && (
+                <span className="products_count">{cartProducts.length}</span>
+              )}
             </div>
             <Link to="/giftcards">
               <button
                 className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown"
-                onClick={toggleNavForSmallScreen}
+                onClick={handleScrollPosition}
               >
                 Gift Cards
               </button>
             </Link>
           </div>
         </div>
-      )}
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

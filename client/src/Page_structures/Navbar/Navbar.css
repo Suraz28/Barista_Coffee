@@ -1,145 +1,156 @@
 .navbar {
   position: relative;
+  background-color: #2997a5;
+  background: transparent;
+  margin-top: 50px;
+  height: 50px;
+  padding: 10px 5px;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  height: auto;
-  margin: 0;
-  padding: 10px 10px;
-  z-index: 100;
-  margin-top: 40px;
+  justify-content: space-between;
+  color: whitesmoke;
+  z-index: 1001;
 }
 
-@media screen and (max-width: 768px) {
-  .navcart.open {
-    backdrop-filter: blur(15px);
-  }
+.nav_image {
+  width: 50%;
 }
 
-.logoimage img {
+.nav_image img {
   height: 45px;
   width: auto;
-  margin-left: 20px;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
-.navcart {
+.nav_links_cart {
+  width: 50%;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  transition: transform 0.5s ease all;
 }
 
-.navtext {
-  display: flex;
+.nav_links {
   width: 100%;
-  gap: 30px;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_links_texts {
+  display: flex;
   align-items: center;
   justify-content: center;
+  gap: 50px;
   font-size: 14px;
-  font-weight: 600;
-  span:hover {
-    cursor: pointer;
-  }
+  padding-right: 30px;
 }
 
-.icons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-  align-items: center;
-  margin-right: 25px;
+.nav_links span {
+  cursor: pointer;
+}
+
+.nav_cart {
+  margin-right: 30px;
   position: relative;
-  .carticon {
-    padding: 5px;
-    border-radius: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.1s ease-in-out;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  .itemcount {
-    transition: 0.1s ease-in-out;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-  }
-  span {
-    position: absolute;
-    top: 0;
-    left: 30px;
-    font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.nav_cart .itemcount {
+  position: relative;
+}
+
+.products_count {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.nav_cart button {
+  cursor: pointer;
+  width: 128px;
+  padding: 8px 4px;
+  border-radius: 6px;
+  background-color: rgb(246 164 83);
+  color: whitesmoke;
+  &:hover {
+    background-color: rgb(51 34 25);
   }
 }
 
-@media screen and (max-width: 860px) {
-  .navtext {
-    padding: 10px 15px;
-    span {
-      font-size: 14px;
-    }
-  }
-  .button {
-    font-size: 12px;
-  }
-  .logoimage img {
-    height: 35px;
-  }
-}
 @media screen and (max-width: 768px) {
   .navbar {
-    display: block;
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 0;
-    padding: 5px 0;
   }
-  .navcart {
-    top: 0;
-    margin-top: 50px;
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+  .nav_image {
     width: 100%;
-    gap: 20px;
-    padding: 10px 0;
-    transition: 0.3s ease all;
-  }
-  .logoimage {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    padding: 10px 10px;
   }
-  .navtext {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    span {
-      font-size: 15px;
-    }
-  }
-  .icons {
-    align-items: flex-end;
-    justify-content: center;
-    height: 40px;
-    margin-right: 50px;
-  }
-  .barscross {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .bars {
     cursor: pointer;
     margin-right: 15px;
+    font-size: 15px;
+  }
+
+  .nav_links_cart {
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 25px;
+    backdrop-filter: blur(50px);
+    color: whitesmoke;
+    padding-top: 80px;
+    transition: 0.5s ease;
+    opacity: 0;
+  }
+
+  .nav_links_cart.open {
+    left: 0;
+    opacity: 1;
+  }
+
+  .nav_links {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .nav_links_texts {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .nav_cart {
+    margin-right: 30px;
+    width: 100%;
+    flex-direction: column;
   }
 }
+
 @media screen and (min-width: 769px) {
-  .barscross {
+  .nav_image span {
     display: none;
-  }
-}
-@media screen and (max-width: 500px) {
-  .navtext {
-    span {
-      font-size: 13px;
-    }
   }
 }
 
