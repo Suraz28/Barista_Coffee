@@ -1,12 +1,12 @@
-.member_image{
-    background-image: url('/Project_images/Backgrounds/top-view-jar-with-roasted-coffee-beans-copy-space.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.member_image {
+  background-image: url("/Project_images/Backgrounds/jar top view.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@media screen and (max-width:500px) {
-    ._member ._member_input_div ._input{
-        width: 250px;
-    }
+@media screen and (max-width: 500px) {
+  ._member ._member_input_div ._input {
+    width: 250px;
+  }
 }
