@@ -50,6 +50,7 @@ const About = () => {
         >
           <motion.img
             src="./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png"
+            alt="logo"
             className="h-20"
             initial={{ opacity: 0, y: -100 }}
             animate={controls}
@@ -76,6 +77,7 @@ const About = () => {
           <div className="_about_image h-full md:w-1/2 w-full flex items-start justify-center">
             <motion.img
               src="./Project_images/Graphics/Coffee_graphic-1.jpg"
+              alt="coffee cup"
               className=" h-60 rounded-md"
               initial={{ opacity: 0, y: -100 }}
               animate={imgControls1}

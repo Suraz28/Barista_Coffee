@@ -136,7 +136,7 @@ const Cart = () => {
             <img
               src="./Project_images/Logos/logo.png"
               className="h-8 md:h-10 "
-              alt="Logo"
+              alt="logo"
             />
           </Link>
           <Link to="/">

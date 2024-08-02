@@ -11,6 +11,7 @@ const Footer = () => {
           <img
             src="./Project_images/Logos/barista-coffee-high-resolution-logo-transparent.png"
             className="logo"
+            alt="logo"
           />
           <p className="description">
             We reside at the heart of the Chitwan district in Bharatpur city.
