@@ -108,20 +108,6 @@ const App = ({
                 </div>
               }
             />
-            {/* <Route
-              path="/claim"
-              element={
-                <Suspense
-                  fallback={
-                    <div style={fallbackStyle}>
-                      <BounceLoader color={spinnerColor} size={spinnerSize} />
-                    </div>
-                  }
-                >
-                  <Claim />
-                </Suspense>
-              }
-            /> */}
             <Route
               path="/cart"
               element={
