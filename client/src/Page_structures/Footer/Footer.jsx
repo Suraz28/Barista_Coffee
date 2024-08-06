@@ -22,7 +22,11 @@ const Footer = () => {
           <span className="title">Contact Us</span>
           <span className="address">Address: Bharatpur, Chitwan</span>
           <span className="email">
-            <Link to="mailto:Barista@gmail.com" target="_blank">
+            <Link
+              to="mailto:Barista@gmail.com"
+              target="_blank"
+              aria-label="email to barista"
+            >
               Email: Barista@gmail.com
             </Link>
           </span>
@@ -31,7 +35,7 @@ const Footer = () => {
         <div className="_footer_3_4">
           <div className="_footer_3">
             <span className="title">
-              <Link style={{ cursor: "auto" }}>Quick Links</Link>
+              <span style={{ cursor: "auto" }}>Quick Links</span>
             </span>
             <Scroll to="home" spy={true} smooth={true} className="quick-link">
               <span>Home</span>

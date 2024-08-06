@@ -77,11 +77,13 @@ const Navbar = () => {
             <RxCross2
               onClick={toggle}
               style={{ fontSize: "20px", cursor: "pointer" }}
+              aria-label="open navigation"
             />
           ) : (
             <FaBarsStaggered
               onClick={toggle}
               style={{ fontSize: "20px", cursor: "pointer" }}
+              aria-label="close-nagivation"
             />
           )}
         </span>
@@ -133,7 +135,7 @@ const Navbar = () => {
           </div>
           <div className="nav_cart">
             <div className="itemcount" onClick={handleScrollPosition}>
-              <Link to="/cart">
+              <Link to="/cart" aria-label="cart">
                 <IoCartOutline
                   className="carticon"
                   style={{ fontSize: "25px", cursor: "pointer" }}
@@ -143,7 +145,7 @@ const Navbar = () => {
                 <span className="products_count">{cartProducts.length}</span>
               )}
             </div>
-            <Link to="/giftcards">
+            <Link to="/giftcards" aria-label="giftcards">
               <button
                 className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown"
                 onClick={handleScrollPosition}

@@ -58,7 +58,7 @@ const GiftCards = () => {
           </div>
         </div>
         <span className="text-white w-full flex items-center md:justify-end justify-center cursor-pointer">
-          <Link to="/" onClick={handleGoBack}>
+          <Link to="/" aria-label="to home" onClick={handleGoBack}>
             Go back
           </Link>
         </span>

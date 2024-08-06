@@ -63,14 +63,22 @@ const Home = () => {
             mouthwatering coffee creations.
           </span>
           <span className="home_buttons mt-6 flex items-center flex-row gap-4 text-sm">
-            <a href="https://play.google.com/store/apps?hl=en" target="_blank">
+            <a
+              href="https://play.google.com/store/apps?hl=en"
+              target="_blank"
+              aria-label="playstore link"
+            >
               <button className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown">
                 Download App
               </button>
             </a>
-            <span className="shop_link cursor-pointer text-sm" onClick={shop}>
+            <a
+              className="shop_link cursor-pointer text-sm"
+              onClick={shop}
+              href="#"
+            >
               COFFEE SHOP
-            </span>
+            </a>
           </span>
         </motion.div>
       </div>

@@ -199,7 +199,11 @@ const AboutStory = () => {
               </div>
             </div>
           </div>
-          <Link to="/" className="mt-8 text-sm underline">
+          <Link
+            to="/"
+            className="mt-8 text-sm underline"
+            aria-label="barista story"
+          >
             <span
               className="w-full flex items-end justify-end md:pr-3"
               onClick={handleGoBack}

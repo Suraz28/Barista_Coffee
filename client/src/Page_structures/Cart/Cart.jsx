@@ -132,14 +132,14 @@ const Cart = () => {
     >
       <div className="md:h-[100%] md:w-[90%] h-full w-full bg-white rounded-md flex flex-col justify-between p-2">
         <div className="cart_nav flex flex-row px-4 w-full items-center justify-between p-3">
-          <Link to="/">
+          <Link to="/" aria-label="to home">
             <img
               src="./Project_images/Logos/logo.png"
               className="h-8 md:h-10 "
               alt="logo"
             />
           </Link>
-          <Link to="/">
+          <Link to="/" aria-label="to home">
             <span
               className="flex items-center justify-center underline text-sm"
               onClick={handleGoBack}
