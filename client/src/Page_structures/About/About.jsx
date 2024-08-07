@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./About.css";
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
