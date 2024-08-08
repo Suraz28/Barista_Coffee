@@ -145,6 +145,37 @@ const Menu = () => {
     }
   }, [controls, inView]);
 
+  useEffect(() => {
+    const disableFocusInAriaHidden = () => {
+      const ariaHiddenElements = document.querySelectorAll(
+        '[aria-hidden="true"]'
+      );
+
+      ariaHiddenElements.forEach((element) => {
+        const focusableElements = element.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+
+        focusableElements.forEach((focusable) => {
+          focusable.setAttribute("tabindex", "-1");
+        });
+      });
+    };
+
+    disableFocusInAriaHidden();
+
+    const carousel = document.querySelector(".slick-carousel");
+    if (carousel) {
+      carousel.addEventListener("afterChange", disableFocusInAriaHidden);
+    }
+
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener("afterChange", disableFocusInAriaHidden);
+      }
+    };
+  }, []);
+
   // get the cartproducts from store
   const cartProducts = useSelector((state) => state.products.cartProducts);
   const dispatch = useDispatch();
@@ -219,9 +250,7 @@ const Menu = () => {
                     <div className="flex flex-row justify-between items-center w-full">
                       <span className="text-md font-bold">{coffee.price}</span>
                       <button
-                        className={
-                          "bg-brown hover:bg-dark-brown text-white px-2 py-1 rounded "
-                        }
+                        className="bg-brown hover:bg-dark-brown text-white px-2 py-1 rounded"
                         onClick={() => handleAddToCart(coffee)}
                         disabled={isInCart(coffee.id)}
                       >
@@ -266,9 +295,7 @@ const Menu = () => {
                     <div className="flex flex-row justify-between items-center w-full">
                       <span className="text-md font-bold">{dessert.price}</span>
                       <button
-                        className={
-                          "bg-brown hover:bg-dark-brown text-white px-2 py-1 rounded"
-                        }
+                        className="bg-brown hover:bg-dark-brown text-white px-2 py-1 rounded"
                         onClick={() => handleAddToCart(dessert)}
                         disabled={isInCart(dessert.id)}
                       >

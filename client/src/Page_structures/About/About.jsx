@@ -113,7 +113,7 @@ const About = () => {
               a casual drinker, Barista Coffee offers an experience that is both
               enriching and unforgettable....
             </motion.p>
-            <Link to="/barista_story" aria-label="link to barista story">
+            <Link to="/barista_story" aria-label="baristastory">
               <motion.button
                 className="button cursor-pointer w-32 px-1 py-2 rounded-md bg-alloy hover:bg-dark-brown"
                 ref={buttonRef}

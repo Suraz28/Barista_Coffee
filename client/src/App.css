@@ -7,9 +7,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #ffffff;
 }
+
+[aria-hidden="true"] {
+  display: none;
+}
+
 .home_h1 {
   font-family: "Rubik Mono One";
 }
