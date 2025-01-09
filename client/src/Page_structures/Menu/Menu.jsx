@@ -17,7 +17,7 @@ const menu = [
       "https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Cappuccino",
     description: "A rich and foamy cappuccino.",
-    price: "Rs 399",
+    price: "Rs 200",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const menu = [
       "https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Espresso",
     description: "A strong and bold espresso.",
-    price: "Rs 320",
+    price: "Rs 30",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const menu = [
       "https://images.unsplash.com/photo-1604298458655-ae6e04213678?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Macchiato",
     description: "A sweet and creamy macchiato.",
-    price: "Rs 450",
+    price: "Rs 250",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const menu = [
       "https://images.unsplash.com/photo-1530373239216-42518e6b4063?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Mocha",
     description: "A chocolaty mocha delight.",
-    price: "Rs 500",
+    price: "Rs 50",
   },
 ];
 
