@@ -148,12 +148,12 @@ const Menu = () => {
   useEffect(() => {
     const disableFocusInAriaHidden = () => {
       const ariaHiddenElements = document.querySelectorAll(
-        '[aria-hidden="true"]'
+        '[aria-hidden="true"]',
       );
 
       ariaHiddenElements.forEach((element) => {
         const focusableElements = element.querySelectorAll(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
         );
 
         focusableElements.forEach((focusable) => {
